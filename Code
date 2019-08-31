@@ -1,0 +1,20 @@
+void printWordsUtil(int number[], int curr_digit, char output[], int n) 
+{ 
+	// Base case, if current output word is prepared 
+	int i; 
+	if (curr_digit == n) 
+	{ 
+		printf("%s ", output); 
+		return ; 
+	} 
+
+	// Try all 3 possible characters for current digir in number[] 
+	// and recur for remaining digits 
+	for (i=0; i<strlen(hashTable[number[curr_digit]]); i++) 
+	{ 
+		output[curr_digit] = hashTable[number[curr_digit]][i]; 
+		printWordsUtil(number, curr_digit+1, output, n); 
+		if (number[curr_digit] == 0 || number[curr_digit] == 1) 
+			return; 
+	} 
+} 
